@@ -19,7 +19,8 @@ settings.configure(
         "django.contrib.sites",
         "flags",
     ],
-    SITE_ID=1
+    SITE_ID=1,
+    NOSE_ARGS = ['--config=config/nose.cfg']
 )
 django.setup()
 
