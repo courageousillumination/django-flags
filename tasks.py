@@ -22,4 +22,4 @@ def lint_python(ctx):
 @task(name='test')
 def test_python(ctx):
     """Run python tests."""
-    run('./runtests.py')
+    run('./runtests.py flags')

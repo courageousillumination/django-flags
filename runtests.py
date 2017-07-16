@@ -26,7 +26,7 @@ django.setup()
 
 def run_tests(*test_args):
     if not test_args:
-        test_args = ['tests']
+        test_args = ['flags']
     test_runner = NoseTestSuiteRunner(verbosity=1)
     failures = test_runner.run_tests(test_args)
     if failures:
