@@ -1,5 +1,5 @@
 """This module provides the base Flag object."""
-
+from typing import Any
 
 class Flag(object):
     """Represents a single configuration flag."""
@@ -17,6 +17,6 @@ class Flag(object):
         self.flag_type = flag_type
         self.default_value = default_value
 
-    def dostuff(self):
-        """docstring."""
-        pass
+    def get_value(self, **kwargs) -> Any:
+        """Get the value of a flag given the context."""
+        return self.default_value
