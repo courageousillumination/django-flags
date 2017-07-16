@@ -10,7 +10,7 @@ class FlagSet(object):
 
     @classmethod
     def create_from_config(cls, config: List[Dict[str, Any]],
-                           overriders: List[FlagOverrider]=None) -> 'FlagSet': # pylint:disable=bad-whitespace,line-too-long
+                           overriders: List[FlagOverrider]=None) -> 'FlagSet':  # pylint:disable=bad-whitespace,line-too-long
         """Creates a FlagSet from a configuration dictionary."""
         return FlagSet([Flag.create_from_config(x) for x in config], overriders)
 
