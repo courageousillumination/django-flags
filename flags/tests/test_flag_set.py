@@ -44,3 +44,10 @@ class FlagSetTestCase(TestCase):
                                               [NeverOverride(),
                                                SimpleOverrider(42)])
         self.assertEqual(flag_set.get_flag_value('int_flag'), 42)
+
+    def test_allows_iteration(self) -> None:
+        """Make sure we can iterate over a flagset."""
+        count = 0
+        for _ in self.flag_set:
+            count = +1
+        self.assertEqual(count, 1)

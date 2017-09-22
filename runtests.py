@@ -12,7 +12,7 @@ settings.configure(
             "ENGINE": "django.db.backends.sqlite3",
         }
     },
-    ROOT_URLCONF="tests.urls",
+    ROOT_URLCONF="flags.tests.urls",
     INSTALLED_APPS=[
         "django.contrib.auth",
         "django.contrib.contenttypes",

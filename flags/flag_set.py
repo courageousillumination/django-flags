@@ -1,11 +1,11 @@
 """This module contains code for the FlagSet."""
-from typing import Any, Dict, List
+from typing import Any, Dict, Iterable, List
 
 from flags.flag import Flag
 from flags.flag_overrider import FlagOverrider
 
 
-class FlagSet(object):
+class FlagSet(Iterable):
     """A collection of flags."""
 
     @classmethod
@@ -29,3 +29,8 @@ class FlagSet(object):
             if overrider.should_override(flag, **kwargs):
                 return overrider.get_override(flag, **kwargs)
         return flag.default_value
+
+    def __iter__(self):
+        """Iterate over all flag names."""
+        for flag_name in self._flags:
+            yield flag_name
